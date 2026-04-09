@@ -74,3 +74,4 @@ cd /tmp/medicine-cabinet
 - ✅ 可安装运行的 Android APK
 - ✅ 完整源代码
 - ✅ README 文档
+# Trigger build
