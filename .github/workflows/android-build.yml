@@ -23,16 +23,16 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Grant execute permission for gradlew
+    - name: Change wrapper permissions
       run: chmod +x gradlew
 
-    - name: Build with Gradle
-      run: ./gradlew assembleRelease --stacktrace
+    - name: Build APK
+      run: ./gradlew assembleRelease --no-daemon --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       if: success()
       with:
-        name: medicine-cabinet-apk
+        name: app-release
         path: app/build/outputs/apk/release/app-release.apk
         retention-days: 30
